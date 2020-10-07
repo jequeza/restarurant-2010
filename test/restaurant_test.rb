@@ -11,9 +11,10 @@ class RestaurantTest < Minitest::Test
   end
 
   def test_it_has_opening_time
-    skip
+    # skip
     restaurant = Restaurant.new('10:00', 'Fuel Cafe')
 
+    require 'pry'; binding.pry
     assert_equal '10:00', restaurant.opening_time
   end
 
