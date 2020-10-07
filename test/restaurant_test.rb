@@ -28,8 +28,9 @@ class RestaurantTest < Minitest::Test
   end
 
   def test_it_has_dishes
-    skip
+    # skip
     restaurant = Restaurant.new('10:00', 'Fuel Cafe')
+    require 'pry'; binding.pry
 
     assert_equal [], restaurant.dishes
   end
