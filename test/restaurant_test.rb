@@ -14,7 +14,7 @@ class RestaurantTest < Minitest::Test
     # skip
     restaurant = Restaurant.new('10:00', 'Fuel Cafe')
 
-    require 'pry'; binding.pry
+    # require 'pry'; binding.pry
     assert_equal '10:00', restaurant.opening_time
   end
 
@@ -22,7 +22,7 @@ class RestaurantTest < Minitest::Test
     # skip
     restaurant = Restaurant.new('10:00', 'Fuel Cafe')
 
-    require 'pry'; binding.pry
+    # require 'pry'; binding.pry
 
     assert_equal 'Fuel Cafe', restaurant.name
   end
@@ -30,17 +30,18 @@ class RestaurantTest < Minitest::Test
   def test_it_has_dishes
     # skip
     restaurant = Restaurant.new('10:00', 'Fuel Cafe')
-    require 'pry'; binding.pry
 
+    # require 'pry'; binding.pry
     assert_equal [], restaurant.dishes
   end
 
   #Iteration 2 Tests:
   def test_it_has_closing_time
-    skip
+    # skip
     restaurant1 = Restaurant.new('10:00', 'Fuel Cafe')
     restaurant2 = Restaurant.new('16:00', 'Il Poggio')
 
+    require 'pry'; binding.pry
     assert_equal '18:00', restaurant1.closing_time(8)
     assert_equal '23:00', restaurant2.closing_time(7)
   end
