@@ -1,5 +1,5 @@
 class Restaurant
-  attr_reader :opening_time, :name, :dishes, :time, :closing_time
+  attr_reader :opening_time, :name, :dishes, :time, :closing_time, :time_format
 
   def initialize(opening_time, name)
     @opening_time = opening_time
@@ -26,5 +26,16 @@ class Restaurant
   def menu_dish_names
     dishes.map!(&:upcase)
   end
+
+  def announce_closing_time(add_hours)
+    if opening_time.to_i > 12
+      @time_format = opening_time.to_i - 12
+      "#{name} will be closing at #{time_format + add_hours}:00PM"
+    elsif opening_time.to_i < 12
+      "#{name} will be closing at #{opening_time.to_i + add_hours}:00AM"
+    else
+      "#{name} will close at noon."
+    end
+    end
 
 end
